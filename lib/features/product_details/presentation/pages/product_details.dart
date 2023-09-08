@@ -70,21 +70,19 @@ class ProductDetails extends StatelessWidget {
               ),
               Row(
                 children: [
-                  Text(
-                    productEntity.title ?? "",
-                    style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 18.sp,
-                        color: const Color(0xff06004F)),
+                  Flexible(
+                    child: Text(
+                      productEntity.title ?? "",
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+
+                      style: GoogleFonts.poppins(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 18.sp,
+                          color: const Color(0xff06004F)),
+                    ),
                   ),
-                  const Spacer(),
-                  Text(
-                    productEntity.price.toString(),
-                    style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 18.sp,
-                        color: const Color(0xff06004F)),
-                  )
+
                 ],
               ),
               SizedBox(
@@ -103,7 +101,7 @@ class ProductDetails extends StatelessWidget {
                             color: const Color(0xff004182).withOpacity(.3))),
                     child: Center(
                       child: Text(
-                        '1200 Sold',
+                        "${productEntity.sold.toString()} sold",
                         style: GoogleFonts.poppins(
                             fontWeight: FontWeight.w500,
                             fontSize: 14.sp,
@@ -120,7 +118,7 @@ class ProductDetails extends StatelessWidget {
                     size: 15.h,
                   ),
                   Text(
-                    ' 4.5 (7,600)',
+                    ' ${productEntity.ratingsAverage.toString()} (${productEntity.ratingsQuantity.toString()})',
                     style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w400,
                         fontSize: 14.sp,
@@ -232,7 +230,7 @@ class ProductDetails extends StatelessWidget {
                         height: 12.h,
                       ),
                       Text(
-                        'EGP 3,000',
+                        'EGP ${productEntity.price.toString()}',
                         style: GoogleFonts.poppins(
                             fontWeight: FontWeight.w500,
                             fontSize: 18.sp,

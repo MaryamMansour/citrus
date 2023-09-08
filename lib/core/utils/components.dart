@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 
 Widget unDefineRoute() => const Scaffold(
-      body: Center(child: Text("UnDefine Route")),
-    );
+  body: Center(
+    child: Text("UnDefine Route"),
+  ),
+);
 
 Widget defaultFormField(
-        {required TextEditingController controller,
-        required String label,
-        required Function validate,
-        bool isPassword = false}) =>
+    {required TextEditingController controller,
+      required String label,
+      required Function validate,
+      bool isPassword = false}) =>
     TextFormField(
       controller: controller,
       validator: (value) {

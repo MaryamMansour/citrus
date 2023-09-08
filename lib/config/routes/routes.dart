@@ -1,20 +1,20 @@
-import 'package:e_commerce/features/home/presentation/pages/home.dart';
-import 'package:e_commerce/features/login/domain/entities/login_entity.dart';
-import 'package:e_commerce/features/login/presentation/manager/cubit.dart';
-import 'package:e_commerce/features/sign_up/presentation/pages/sign_up.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../core/utils/components.dart';
+import '../../features/home/presentation/pages/home.dart';
 import '../../features/login/data/data_sources/data_sources.dart';
+import '../../features/login/presentation/manager/cubit.dart';
 import '../../features/login/presentation/pages/login.dart';
+import '../../features/sign_up/presentation/pages/sign_up.dart';
 
 class Routes {
   static const String login = "/";
-  static const String signUp = "SignUp";
-  static const String home = "home";
-
+  static const String signUp = "signUp";
+  static const String home = "homeScreen";
+  static const String productDetails = "productDetails";
+  static const String cart = "cart";
 }
 
 class AppRoutes {
@@ -31,15 +31,23 @@ class AppRoutes {
           builder: (context) => const SignUpScreen(),
         );
       case Routes.home:
-        LoginEntity loginEntity = routeSettings.arguments as LoginEntity;
+      // LoginEntity loginEntity = routeSettings.arguments as LoginEntity;
         return MaterialPageRoute(
-          builder: (context) =>  HomeScreen(loginEntity),
+          builder: (context) => HomeScreen(),
         );
+      // case Routes.productDetails:
+      //   ProductDataEntity productEntity =
+      //   routeSettings.arguments as ProductDataEntity;
+      //   return MaterialPageRoute(
+      //     builder: (context) => ProductDetails(productEntity),
+      //   );
+      // case Routes.cart:
+      //   return MaterialPageRoute(
+      //     builder: (context) => CartScreen(),
+      //   );
 
       default:
-        return MaterialPageRoute(
-          builder: (context) => unDefineRoute(),
-        );
+        return MaterialPageRoute(builder: (context) => unDefineRoute());
     }
   }
 }

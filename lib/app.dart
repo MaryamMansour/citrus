@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (context, child) =>MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: "/",
+        initialRoute: "homeScreen",
         onGenerateRoute: (settings) => AppRoutes.onGenerate(settings),
       ),
     );

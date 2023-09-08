@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../core/utils/components.dart';
+import '../../features/home/domain/entities/ProductEntity.dart';
 import '../../features/home/presentation/pages/home.dart';
 import '../../features/login/data/data_sources/data_sources.dart';
 import '../../features/login/presentation/manager/cubit.dart';
 import '../../features/login/presentation/pages/login.dart';
+import '../../features/product_details/presentation/pages/product_details.dart';
 import '../../features/sign_up/presentation/pages/sign_up.dart';
 
 class Routes {
@@ -35,12 +37,12 @@ class AppRoutes {
         return MaterialPageRoute(
           builder: (context) => HomeScreen(),
         );
-      // case Routes.productDetails:
-      //   ProductDataEntity productEntity =
-      //   routeSettings.arguments as ProductDataEntity;
-      //   return MaterialPageRoute(
-      //     builder: (context) => ProductDetails(productEntity),
-      //   );
+      case Routes.productDetails:
+        ProductDataEntity productEntity =
+        routeSettings.arguments as ProductDataEntity;
+        return MaterialPageRoute(
+          builder: (context) => ProductDetails(productEntity),
+        );
       // case Routes.cart:
       //   return MaterialPageRoute(
       //     builder: (context) => CartScreen(),

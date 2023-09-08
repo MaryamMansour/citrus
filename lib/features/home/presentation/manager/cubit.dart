@@ -5,6 +5,7 @@ import 'package:e_commerce/features/home/data/repositories/home_data_repo.dart';
 import 'package:e_commerce/features/home/domain/repositories/home_domain_repo.dart';
 import 'package:e_commerce/features/home/domain/use_cases/get_brands_use_case.dart';
 import 'package:e_commerce/features/home/domain/use_cases/get_categories_use_case.dart';
+import 'package:e_commerce/features/home/domain/use_cases/get_products_use_case.dart';
 import 'package:e_commerce/features/home/presentation/manager/states.dart';
 import 'package:e_commerce/features/home/presentation/pages/tabs/category_tab.dart';
 import 'package:e_commerce/features/home/presentation/pages/tabs/fav_tab.dart';
@@ -13,6 +14,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../domain/entities/CategoriesEntity.dart';
+import '../../domain/entities/ProductEntity.dart';
 import '../pages/tabs/home_tab.dart';
 
 class HomeCubit extends Cubit<HomeStates>{
@@ -37,6 +39,8 @@ class HomeCubit extends Cubit<HomeStates>{
 
   List<DataEntity> categories=[];
   List<DataEntity> brands=[];
+  List<ProductDataEntity> products = [];
+
 
 
   void changeBottomNav(int index){
@@ -57,6 +61,19 @@ class HomeCubit extends Cubit<HomeStates>{
       brands = r.data??[];
       emit(HomeGetBrandsSuccessState(r));
         });
+
+  }
+  getProducts()async {
+
+    emit(HomeLoadingState());
+    GetProductsUseCase getProductsUseCase =GetProductsUseCase(homeDomainRepo);
+    var result = await getProductsUseCase.call();
+    result.fold((l) => {
+      emit(HomeGetProductsErrorState(l))
+    }, (r)  {
+      products = r.data??[];
+      emit(HomeGetProductsSuccessState(r));
+    });
 
   }
 

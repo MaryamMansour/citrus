@@ -23,19 +23,19 @@ class _HomeScreenState extends State<HomeScreen> {
       create: (context) => HomeCubit(HomeRemoteDto())
         ..getCategories()
         ..getBrands()
-        // ..getProducts(),
-      ,
+        ..getProducts(),
+
       child: BlocConsumer<HomeCubit, HomeStates>(
         listener: (context, state) {
-          // if (state is HomeGetProductsErrorState) {
-          //   showDialog(
-          //     context: context,
-          //     builder: (context) => AlertDialog(
-          //       title: Text("Error"),
-          //       content: Text(state.failures.message),
-          //     ),
-          //   );
-          // }
+          if (state is HomeGetProductsErrorState) {
+            showDialog(
+              context: context,
+              builder: (context) => AlertDialog(
+                title: Text("Error"),
+                content: Text(state.failures.message),
+              ),
+            );
+          }
           if (state is HomeLoadingState) {
             showDialog(
               context: context,

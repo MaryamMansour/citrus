@@ -19,15 +19,15 @@ class HomeTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<HomeCubit, HomeStates>(
       listener: (context, state) {
-        // if (state is HomeGetProductsErrorState) {
-        //   showDialog(
-        //     context: context,
-        //     builder: (context) => AlertDialog(
-        //       title: Text("Error"),
-        //       // content: Text(state.failures.message),
-        //     ),
-        //   );
-        // }
+        if (state is HomeGetProductsErrorState) {
+          showDialog(
+            context: context,
+            builder: (context) => AlertDialog(
+              title: Text("Error"),
+              content: Text(state.failures.message),
+            ),
+          );
+        }
       },
       builder: (context, state) => SingleChildScrollView(
         child: Column(

@@ -1,81 +1,32 @@
 class ProductEntity {
   ProductEntity({
-      this.results, 
-      this.metadata, 
-      this.data,});
+    this.results,
+    this.data,
+  });
 
-  ProductEntity.fromJson(dynamic json) {
-    results = json['results'];
-    metadata = json['metadata'] != null ? Metadata.fromJson(json['metadata']) : null;
-    if (json['data'] != null) {
-      data = [];
-      json['data'].forEach((v) {
-        data?.add(Data.fromJson(v));
-      });
-    }
-  }
   int? results;
-  Metadata? metadata;
-  List<Data>? data;
 
-  Map<String, dynamic> toJson() {
-    final map = <String, dynamic>{};
-    map['results'] = results;
-    if (metadata != null) {
-      map['metadata'] = metadata?.toJson();
-    }
-    if (data != null) {
-      map['data'] = data?.map((v) => v.toJson()).toList();
-    }
-    return map;
-  }
-
+  List<ProductDataEntity>? data;
 }
 
-class Data {
-  Data({
-      this.sold, 
-      this.images, 
-      this.subcategory, 
-      this.ratingsQuantity, 
-      this.id, 
-      this.title, 
-      this.slug, 
-      this.description, 
-      this.quantity, 
-      this.price, 
-      this.imageCover, 
-      this.category, 
-      this.brand, 
-      this.ratingsAverage, 
-      this.createdAt, 
-      this.updatedAt, 
-      this.id,});
+class ProductDataEntity {
+  ProductDataEntity({
+    this.sold,
+    this.images,
+    this.subcategory,
+    this.ratingsQuantity,
+    this.id,
+    this.title,
+    this.slug,
+    this.description,
+    this.quantity,
+    this.price,
+    this.imageCover,
+    this.category,
+    this.brand,
+    this.ratingsAverage,
+  });
 
-  Data.fromJson(dynamic json) {
-    sold = json['sold'];
-    images = json['images'] != null ? json['images'].cast<String>() : [];
-    if (json['subcategory'] != null) {
-      subcategory = [];
-      json['subcategory'].forEach((v) {
-        subcategory?.add(Subcategory.fromJson(v));
-      });
-    }
-    ratingsQuantity = json['ratingsQuantity'];
-    id = json['_id'];
-    title = json['title'];
-    slug = json['slug'];
-    description = json['description'];
-    quantity = json['quantity'];
-    price = json['price'];
-    imageCover = json['imageCover'];
-    category = json['category'] != null ? Category.fromJson(json['category']) : null;
-    brand = json['brand'] != null ? Brand.fromJson(json['brand']) : null;
-    ratingsAverage = json['ratingsAverage'];
-    createdAt = json['createdAt'];
-    updatedAt = json['updatedAt'];
-    id = json['id'];
-  }
   int? sold;
   List<String>? images;
   List<Subcategory>? subcategory;
@@ -89,47 +40,16 @@ class Data {
   String? imageCover;
   Category? category;
   Brand? brand;
-  double? ratingsAverage;
-  String? createdAt;
-  String? updatedAt;
-  String? id;
-
-  Map<String, dynamic> toJson() {
-    final map = <String, dynamic>{};
-    map['sold'] = sold;
-    map['images'] = images;
-    if (subcategory != null) {
-      map['subcategory'] = subcategory?.map((v) => v.toJson()).toList();
-    }
-    map['ratingsQuantity'] = ratingsQuantity;
-    map['_id'] = id;
-    map['title'] = title;
-    map['slug'] = slug;
-    map['description'] = description;
-    map['quantity'] = quantity;
-    map['price'] = price;
-    map['imageCover'] = imageCover;
-    if (category != null) {
-      map['category'] = category?.toJson();
-    }
-    if (brand != null) {
-      map['brand'] = brand?.toJson();
-    }
-    map['ratingsAverage'] = ratingsAverage;
-    map['createdAt'] = createdAt;
-    map['updatedAt'] = updatedAt;
-    map['id'] = id;
-    return map;
-  }
-
+  num? ratingsAverage;
 }
 
 class Brand {
   Brand({
-      this.id, 
-      this.name, 
-      this.slug, 
-      this.image,});
+    this.id,
+    this.name,
+    this.slug,
+    this.image,
+  });
 
   Brand.fromJson(dynamic json) {
     id = json['_id'];
@@ -137,6 +57,7 @@ class Brand {
     slug = json['slug'];
     image = json['image'];
   }
+
   String? id;
   String? name;
   String? slug;
@@ -150,15 +71,15 @@ class Brand {
     map['image'] = image;
     return map;
   }
-
 }
 
 class Category {
   Category({
-      this.id, 
-      this.name, 
-      this.slug, 
-      this.image,});
+    this.id,
+    this.name,
+    this.slug,
+    this.image,
+  });
 
   Category.fromJson(dynamic json) {
     id = json['_id'];
@@ -166,6 +87,7 @@ class Category {
     slug = json['slug'];
     image = json['image'];
   }
+
   String? id;
   String? name;
   String? slug;
@@ -179,15 +101,15 @@ class Category {
     map['image'] = image;
     return map;
   }
-
 }
 
 class Subcategory {
   Subcategory({
-      this.id, 
-      this.name, 
-      this.slug, 
-      this.category,});
+    this.id,
+    this.name,
+    this.slug,
+    this.category,
+  });
 
   Subcategory.fromJson(dynamic json) {
     id = json['_id'];
@@ -195,6 +117,7 @@ class Subcategory {
     slug = json['slug'];
     category = json['category'];
   }
+
   String? id;
   String? name;
   String? slug;
@@ -208,34 +131,4 @@ class Subcategory {
     map['category'] = category;
     return map;
   }
-
-}
-
-class Metadata {
-  Metadata({
-      this.currentPage, 
-      this.numberOfPages, 
-      this.limit, 
-      this.nextPage,});
-
-  Metadata.fromJson(dynamic json) {
-    currentPage = json['currentPage'];
-    numberOfPages = json['numberOfPages'];
-    limit = json['limit'];
-    nextPage = json['nextPage'];
-  }
-  int? currentPage;
-  int? numberOfPages;
-  int? limit;
-  int? nextPage;
-
-  Map<String, dynamic> toJson() {
-    final map = <String, dynamic>{};
-    map['currentPage'] = currentPage;
-    map['numberOfPages'] = numberOfPages;
-    map['limit'] = limit;
-    map['nextPage'] = nextPage;
-    return map;
-  }
-
 }

@@ -99,6 +99,7 @@ class HomeCubit extends Cubit<HomeStates>{
     AddCartUseCase addCartUseCase = AddCartUseCase(homeDomainRepo);
     var result = await addCartUseCase.call(productId);
     result.fold((l) {
+      print(l.message);
       emit(AddToCartErrorState(l));
     }, (r) {
       numOfItemsInCart = r.numOfCartItems ?? 0;

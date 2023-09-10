@@ -44,10 +44,10 @@ class AppRoutes {
         return MaterialPageRoute(
           builder: (context) => ProductDetails(productEntity),
         );
-      // case Routes.cart:
-      //   return MaterialPageRoute(
-      //     builder: (context) => CartScreen(),
-      //   );
+      case Routes.cart:
+        return MaterialPageRoute(
+          builder: (context) => CartScreen(),
+        );
 
       default:
         return MaterialPageRoute(builder: (context) => unDefineRoute());

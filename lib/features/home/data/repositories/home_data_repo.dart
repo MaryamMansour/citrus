@@ -6,6 +6,8 @@ import 'package:e_commerce/features/home/domain/entities/CategoriesEntity.dart';
 import 'package:e_commerce/features/home/domain/entities/ProductEntity.dart';
 import 'package:e_commerce/features/home/domain/repositories/home_domain_repo.dart';
 
+import '../models/AddCartResponse.dart';
+
 class HomeDataRepo implements HomeDomainRepo{
   HomeDataSources homeDataSources;
   HomeDataRepo(this.homeDataSources);
@@ -19,7 +21,7 @@ class HomeDataRepo implements HomeDomainRepo{
   Future<Either<Failures, ProductEntity>> getProducts() => homeDataSources.getProducts();
 
   @override
-  Future<Either<Failures, CartResponse>> addToCart(String productId) {
+  Future<Either<Failures, AddCartResponse>> addToCart(String productId) {
     return homeDataSources.addToCart(productId);
   }
   }

@@ -4,6 +4,8 @@ import 'package:e_commerce/features/home/data/models/CartResponse.dart';
 import 'package:e_commerce/features/home/domain/entities/CategoriesEntity.dart';
 import 'package:e_commerce/features/home/domain/entities/ProductEntity.dart';
 
+import '../../data/models/AddCartResponse.dart';
+
 abstract class HomeDomainRepo{
 
 
@@ -11,6 +13,6 @@ abstract class HomeDomainRepo{
   Future <Either<Failures, CategoryOrBrandEntity>>getBrands();
   Future <Either<Failures, ProductEntity>>getProducts();
 
-  Future <Either<Failures, CartResponse>>addToCart(String productId);
+  Future <Either<Failures, AddCartResponse>>addToCart(String productId);
 
 }

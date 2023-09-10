@@ -3,6 +3,7 @@ import 'package:e_commerce/core/utils/app_images.dart';
 import 'package:e_commerce/features/home/data/data_sources/data_sources.dart';
 import 'package:e_commerce/features/home/data/repositories/home_data_repo.dart';
 import 'package:e_commerce/features/home/domain/repositories/home_domain_repo.dart';
+import 'package:e_commerce/features/home/domain/use_cases/add_cart_use_case.dart';
 import 'package:e_commerce/features/home/domain/use_cases/get_brands_use_case.dart';
 import 'package:e_commerce/features/home/domain/use_cases/get_categories_use_case.dart';
 import 'package:e_commerce/features/home/domain/use_cases/get_products_use_case.dart';
@@ -90,6 +91,16 @@ class HomeCubit extends Cubit<HomeStates>{
       emit(HomeGetCategoriesSuccessState(r));
     });
 
+  }
+
+  void addToCart(String productId) async {
+    AddCartUseCase addCartUseCase = AddCartUseCase(homeDomainRepo);
+    var result = await addCartUseCase.call(productId);
+    result.fold((l) => {
+      emit(AddToCartErrorState(l))
+    }, (r)  {
+      emit(AddToCartSuccessState(r));
+    });
   }
 
 }

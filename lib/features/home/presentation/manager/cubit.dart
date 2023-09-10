@@ -28,7 +28,7 @@ class HomeCubit extends Cubit<HomeStates>{
   static HomeCubit get(context) => BlocProvider.of(context);
 
   int bottomNavIndex=0;
-  List<Widget>tabs=const [HomeTab(),CategoryTab(),FavTab(),ProfileTab()];
+  List<Widget>tabs= [HomeTab(),CategoryTab(),FavTab(),ProfileTab()];
 
   List<String>sliders=[
     AppImages.slider1,

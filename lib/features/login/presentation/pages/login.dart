@@ -7,6 +7,7 @@ import '../../../../config/routes/routes.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_images.dart';
 import '../../../../core/utils/app_strings.dart';
+import '../../../../core/utils/cache_helper.dart';
 import '../../../../core/utils/components.dart';
 import '../../../../core/utils/text_styles.dart';
 import '../manager/cubit.dart';
@@ -22,7 +23,9 @@ class LoginScreen extends StatelessWidget {
       if (state is LoginSuccessState) {
         Navigator.pop(context);
         // print(json.encode(state.loginEntity.token));
-        // CacheHelper.saveData(key: "User", value: state.loginEntity.token);
+        CacheHelper.saveData(key: "User", value: state.loginEntity.token);
+        CacheHelper.saveData(key: "UserMail", value: state.loginEntity.user.email);
+
         Navigator.pushNamedAndRemoveUntil(
             context,
             Routes.home,

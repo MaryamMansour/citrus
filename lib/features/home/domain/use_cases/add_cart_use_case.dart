@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 
 import '../../../../core/error/failures.dart';
+import '../../data/models/CartResponse.dart';
 import '../repositories/home_domain_repo.dart';
 
 

@@ -3,6 +3,8 @@ import 'package:e_commerce/features/home/data/models/CategoryOrBrandModel.dart';
 import 'package:e_commerce/features/home/domain/entities/CategoriesEntity.dart';
 import 'package:e_commerce/features/home/domain/entities/ProductEntity.dart';
 
+import '../../data/models/CartResponse.dart';
+
 abstract class HomeStates{
 }
 
@@ -33,4 +35,17 @@ class HomeGetProductsSuccessState extends HomeStates{
 class HomeGetProductsErrorState extends HomeStates{
   Failures failures;
   HomeGetProductsErrorState(this.failures);
+}
+class AddToCartLoadingState extends HomeStates {}
+
+class AddToCartSuccessState extends HomeStates {
+  CartResponse cartResponse;
+
+  AddToCartSuccessState(this.cartResponse);
+}
+
+class AddToCartErrorState extends HomeStates {
+  Failures failures;
+
+  AddToCartErrorState(this.failures);
 }

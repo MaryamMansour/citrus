@@ -65,14 +65,18 @@ class HomeRemoteDto implements HomeDataSources {
   @override
   Future<Either<Failures, CartResponse>> addToCart(String productId) async {
     var userToken = CacheHelper.getData("User");
+    print(userToken);
     try {
       var response = await dio.post(
           "${Constants.baseApiUrl}${EndPoints.addToCart}",
           options: Options(headers: {"token": userToken}),
           data: {"productId": productId});
       CartResponse cartResponse = CartResponse.fromJson(response.data);
+
       return Right(cartResponse);
     } catch (e) {
+      print("wTdd");
+
       return Left(ServerFailures(e.toString()));
     }
   }

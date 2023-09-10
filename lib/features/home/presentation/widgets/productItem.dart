@@ -142,7 +142,7 @@ class ProductItem extends StatelessWidget {
                 alignment: Alignment.bottomRight,
                 child: InkWell(
                   onTap: () {
-                    // HomeCubit.get(context).addTCart(model.id ?? "");
+                    HomeCubit.get(context).addToCart(model.id ?? "");
                   },
                   child: CircleAvatar(
                     radius: 15.r,

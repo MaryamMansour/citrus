@@ -19,7 +19,8 @@ class HomeDataRepo implements HomeDomainRepo{
   Future<Either<Failures, ProductEntity>> getProducts() => homeDataSources.getProducts();
 
   @override
-  Future<Either<Failures, CartResponse>> addToCart(String productId) =>homeDataSources.addToCart( productId);
-
+  Future<Either<Failures, CartResponse>> addToCart(String productId) {
+    return homeDataSources.addToCart(productId);
+  }
   }
 

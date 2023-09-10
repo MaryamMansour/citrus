@@ -93,14 +93,18 @@ class HomeCubit extends Cubit<HomeStates>{
 
   }
 
+
   void addToCart(String productId) async {
+    emit(AddToCartLoadingState());
     AddCartUseCase addCartUseCase = AddCartUseCase(homeDomainRepo);
     var result = await addCartUseCase.call(productId);
-    result.fold((l) => {
-      emit(AddToCartErrorState(l))
-    }, (r)  {
+    result.fold((l) {
+      emit(AddToCartErrorState(l));
+    }, (r) {
+      numOfItemsInCart = r.numOfCartItems ?? 0;
       emit(AddToCartSuccessState(r));
     });
   }
+
 
 }

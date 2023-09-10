@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../core/utils/components.dart';
+import '../../features/cart/presentation/pages/cart_screen.dart';
 import '../../features/home/domain/entities/ProductEntity.dart';
 import '../../features/home/presentation/pages/home.dart';
 import '../../features/login/data/data_sources/data_sources.dart';

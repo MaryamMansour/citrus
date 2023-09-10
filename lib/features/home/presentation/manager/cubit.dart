@@ -28,6 +28,7 @@ class HomeCubit extends Cubit<HomeStates>{
   static HomeCubit get(context) => BlocProvider.of(context);
 
   int bottomNavIndex=0;
+  int numOfItemsInCart=0;
   List<Widget>tabs= [HomeTab(),CategoryTab(),FavTab(),ProfileTab()];
 
   List<String>sliders=[

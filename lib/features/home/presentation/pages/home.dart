@@ -56,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Badge(
                     alignment: Alignment.topCenter,
                     label: Text(
-                        "HomeCubit.get(context).numOfItemsInCart.toString()"
+                        HomeCubit.get(context).numOfItemsInCart.toString()
                     ),
                     child: IconButton(
                         onPressed: () {

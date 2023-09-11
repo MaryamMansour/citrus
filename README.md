@@ -1,8 +1,8 @@
-# 🛍️🍋 Citrus- Flutter e-commrce App
+# 🛍️🍋 Citrus  -FlutterApp
 
 Citrus is a feature-rich e-commerce Flutter app that allows users to shop for clothing, beauty products, and more. The app is built using the Clean Architecture pattern, employs the Bloc and Cubit state management system, and handles API requests with the Dio package. Users can perform various actions such as login, signup, signout, search, browse categories and brands, add products to the cart, update or delete items in the cart, and add items to their favorite list.
 
-## 🌟 Features
+##  Features
 
 -User authentication (login, signup, and signout) .
 -Persistent login using SharedPreferences.
@@ -18,7 +18,7 @@ Citrus is a feature-rich e-commerce Flutter app that allows users to shop for cl
 -Display image slideshows with flutter_image_slideshow.
 -Check internet connectivity with internet_connection_checker.
 
-## 📚 Resources
+##  Resources
 
 - API: https://documenter.getpostman.com/view/5709532/2s8Z75SVbe
 
@@ -33,27 +33,28 @@ Citrus is a feature-rich e-commerce Flutter app that allows users to shop for cl
 <details>
 <summary>Click to expand</summary>
 
-### Splash Screen
-<img src="app/screens/splash.jpeg" alt="splash" width="210" height="450">
+### signup Screen
+<img src="screens/signup.jpg"  width="210" height="450">
 
 ### Login Screen
-<img src="app/screens/login.jpeg" alt="login" width="210" height="450">
-
-### signup Screen
-<img src="app/screens/signup.jpeg" alt="signUp" width="210" height="450">
+<img src="screens/login.jpg"  width="210" height="450">
 
 ### Home Screen
-<img src="app/screens/home.jpeg" alt="Recipe List" width="210" height="450">
+<img src="screens/home.jpg"  width="210" height="450">
 
-### Recipe Details Screen
+### products Screen
+<img src="screens/prod1.jpg"  width="210" height="450">
+<img src="screens/prod2.jpg"  width="210" height="450">
 
-<img src="app/screens/details.jpeg" alt="Recipe details" width="210" height="450">
+### Product Details Screen
+ <img src="screens/details.jpg"  width="210" height="450">
 
-### search Screen
-<img src="app/screens/search.jpeg" alt="Recipe search" width="210" height="450">
+### cart Screen
+<img src="screens/cart.jpg"  width="210" height="450">
 
-### favourite Screen
-<img src="app/screens/fav.jpeg" alt="Recipe fav" width="210" height="450">
+### profile Screen
+<img src="screens/profile.jpg"  width="210" height="450">
+
 
 
 

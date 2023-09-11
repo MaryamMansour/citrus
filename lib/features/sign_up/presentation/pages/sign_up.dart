@@ -60,8 +60,8 @@ class SignUpScreen extends StatelessWidget {
                         height: 85.h,
                       ),
                       Image.asset(
-                        AppImages.logo,
-                        height: 71.h,
+                        AppImages.logo1,
+                        height: 200.h,
                         width: 237.w,
                       ),
                       SizedBox(
@@ -150,7 +150,7 @@ class SignUpScreen extends StatelessWidget {
                                 style: GoogleFonts.poppins(
                                     fontWeight: FontWeight.w500,
                                     fontSize: 18.sp,
-                                    color: Colors.white)),
+                                    color: AppColors.lemon)),
                           )
                         ],
                       )

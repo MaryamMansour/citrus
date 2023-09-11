@@ -71,13 +71,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 )
               ],
               title: Image.asset(
-                AppImages.logo,
-                width: 66.w,
-                color: AppColors.primary,
-                height: 22.h,
+                AppImages.logo22,
+                width: 180.w,
+
+                height: 70.h,
               ),
               backgroundColor: Colors.white,
-              elevation: 0,
+              elevation: 8,
             ),
             bottomNavigationBar: BottomNavigationBar(
               currentIndex: HomeCubit.get(context).bottomNavIndex,

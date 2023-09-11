@@ -56,7 +56,7 @@ class CartItem extends StatelessWidget {
                         product.product?.title?.substring(0, 8) ?? "",
                         textAlign: TextAlign.center,
                         style: GoogleFonts.poppins(
-                          color: Color(0xFF06004E),
+                          color: AppColors.primary,
                           fontSize: 18.sp,
                           fontWeight: FontWeight.w500,
                         ),
@@ -81,7 +81,7 @@ class CartItem extends StatelessWidget {
                       Container(
                           padding: const EdgeInsets.all(8),
                           decoration: BoxDecoration(
-                            color: AppColors.hit2,
+                            color: AppColors.primary,
                             borderRadius: BorderRadius.circular(20),
                           ),
                           child: Row(

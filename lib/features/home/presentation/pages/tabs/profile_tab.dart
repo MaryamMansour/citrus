@@ -1,3 +1,4 @@
+import 'package:e_commerce/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -21,7 +22,6 @@ class ProfileTab extends StatelessWidget {
           children: [
              CircleAvatar(
               radius: 30,
-              // backgroundImage: AssetImage('assets/images/person.png'),
                  backgroundColor: Colors.transparent,
                 child: ClipRRect(
                   borderRadius:BorderRadius.circular(50),
@@ -30,7 +30,7 @@ class ProfileTab extends StatelessWidget {
             ),
             SizedBox(height: 20),
             Text(
-              'Username',
+              'Maryam',
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
@@ -56,7 +56,7 @@ class ProfileTab extends StatelessWidget {
             ListTile(
               leading: Icon(Icons.person),
               title: Text('Name'),
-              subtitle: Text('name '),
+              subtitle: Text('Maryam Mansour '),
             ),
             ListTile(
               leading: Icon(Icons.email),
@@ -78,6 +78,9 @@ class ProfileTab extends StatelessWidget {
             ),
             Center(
               child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: AppColors.primary, // Background color
+                ),
                 onPressed: () {
                   CacheHelper.removeData("User");
                   Navigator.pushNamedAndRemoveUntil(

@@ -15,7 +15,7 @@ class ProductDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        iconTheme: IconThemeData(color: AppColors.hintColor),
+        iconTheme: IconThemeData(color: AppColors.primary),
         centerTitle: true,
         title: Text(
           "Product Details",
@@ -53,7 +53,7 @@ class ProductDetails extends StatelessWidget {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15.r),
                     border: Border.all(
-                        color: const Color(0xff004182).withOpacity(.3),
+                        color: AppColors.primary.withOpacity(.3),
                         width: 2.w)),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(15.r),
@@ -79,7 +79,7 @@ class ProductDetails extends StatelessWidget {
                       style: GoogleFonts.poppins(
                           fontWeight: FontWeight.w500,
                           fontSize: 18.sp,
-                          color: const Color(0xff06004F)),
+                          color: AppColors.primary),
                     ),
                   ),
 
@@ -98,14 +98,14 @@ class ProductDetails extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20.r),
                         border: Border.all(
                             width: 1.h,
-                            color: const Color(0xff004182).withOpacity(.3))),
+                            color: AppColors.primary.withOpacity(.3))),
                     child: Center(
                       child: Text(
                         "${productEntity.sold.toString()} sold",
                         style: GoogleFonts.poppins(
                             fontWeight: FontWeight.w500,
                             fontSize: 14.sp,
-                            color: const Color(0xff06004F)),
+                            color: AppColors.primary),
                       ),
                     ),
                   ),
@@ -114,7 +114,7 @@ class ProductDetails extends StatelessWidget {
                   ),
                   Icon(
                     Icons.star,
-                    color: const Color(0xffFDD835),
+                    color: AppColors.lemon,
                     size: 15.h,
                   ),
                   Text(
@@ -122,7 +122,7 @@ class ProductDetails extends StatelessWidget {
                     style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w400,
                         fontSize: 14.sp,
-                        color: const Color(0xff06004F)),
+                        color: AppColors.primary),
                   ),
                   SizedBox(
                     width: 66.w,
@@ -132,7 +132,7 @@ class ProductDetails extends StatelessWidget {
                       padding: EdgeInsets.symmetric(
                           vertical: 11.h, horizontal: 16.w),
                       decoration: BoxDecoration(
-                          color: const Color(0xff004182),
+                          color: AppColors.primary,
                           borderRadius: BorderRadius.circular(20.r)),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -211,7 +211,7 @@ class ProductDetails extends StatelessWidget {
                   style: GoogleFonts.poppins(
                       fontWeight: FontWeight.w400,
                       fontSize: 14.sp,
-                      color: const Color(0xff06004F).withOpacity(.6)),
+                      color: AppColors.primary.withOpacity(.6)),
                 ),
               ),
               SizedBox(
@@ -225,7 +225,7 @@ class ProductDetails extends StatelessWidget {
                           style: GoogleFonts.poppins(
                               fontWeight: FontWeight.w500,
                               fontSize: 18.sp,
-                              color: const Color(0xff06004F).withOpacity(.6))),
+                              color:AppColors.primary.withOpacity(.6))),
                       SizedBox(
                         height: 12.h,
                       ),
@@ -234,7 +234,7 @@ class ProductDetails extends StatelessWidget {
                         style: GoogleFonts.poppins(
                             fontWeight: FontWeight.w500,
                             fontSize: 18.sp,
-                            color: const Color(0xff06004F)),
+                            color: AppColors.primary),
                       ),
                     ],
                   ),
@@ -247,7 +247,7 @@ class ProductDetails extends StatelessWidget {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20.r),
                             ),
-                            backgroundColor: const Color(0xff004182),
+                            backgroundColor: AppColors.primary,
                             padding: EdgeInsets.symmetric(
                                 vertical: 15.h, horizontal: 32.w)),
                         onPressed: () {},

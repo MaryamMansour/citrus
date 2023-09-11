@@ -32,6 +32,7 @@ class HomeTab extends StatelessWidget {
       builder: (context, state) => SingleChildScrollView(
         child: Column(
           children: [
+            SizedBox(height: 15.h,),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 17.w),
               child: Row(
@@ -54,7 +55,7 @@ class HomeTab extends StatelessWidget {
                               height: 24.h,
                             )),
                         hintText: 'what do you search for?',
-                        hintStyle: poppins14W300(color: AppColors.hintColor),
+                        hintStyle: poppins14W300(color: AppColors.primary),
                         filled: true,
                         contentPadding: const EdgeInsets.only(top: 20.0),
                         fillColor: Colors.white,

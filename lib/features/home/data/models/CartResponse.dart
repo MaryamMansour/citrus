@@ -28,8 +28,8 @@ class Data {
   List<Products>? products;
   String? createdAt;
   String? updatedAt;
-  int? iV;
-  int? totalCartPrice;
+  num? iV;
+  num? totalCartPrice;
 
   Data(
       {this.sId,
@@ -74,7 +74,7 @@ class Products {
   int? count;
   String? sId;
   Product? product;
-  int? price;
+  num? price;
 
   Products({this.count, this.sId, this.product, this.price});
 
@@ -102,11 +102,11 @@ class Product {
   List<Subcategory>? subcategory;
   String? sId;
   String? title;
-  int? quantity;
+  num? quantity;
   String? imageCover;
   Category? category;
   Category? brand;
-  double? ratingsAverage;
+  num? ratingsAverage;
   String? id;
 
   Product(

@@ -53,7 +53,7 @@ class CartScreen extends StatelessWidget {
                           ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0),),
-                                  backgroundColor: AppColors.hit2),
+                                  backgroundColor: AppColors.orange),
                               onPressed: () {},
                               child: Text("Check Out"))
                         ],

@@ -22,7 +22,6 @@ class LoginScreen extends StatelessWidget {
     return BlocConsumer<LoginCubit, LoginStates>(listener: (context, state) {
       if (state is LoginSuccessState) {
         Navigator.pop(context);
-        // print(json.encode(state.loginEntity.token));
         CacheHelper.saveData(key: "User", value: state.loginEntity.token);
         CacheHelper.saveData(key: "UserMail", value: state.loginEntity.user.email);
 
@@ -61,15 +60,15 @@ class LoginScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   SizedBox(
-                    height: 91.h,
+                    height: 70.h,
                   ),
                   Image.asset(
-                    AppImages.logo,
-                    height: 71.h,
-                    width: 237.w,
+                    AppImages.logo1,
+                    height: 250.h,
+                    width: 250.w,
                   ),
                   SizedBox(
-                    height: 86.h,
+                    height: 40.h,
                   ),
                   Text(
                     AppStrings.welcome,
@@ -78,6 +77,7 @@ class LoginScreen extends StatelessWidget {
                         fontWeight: FontWeight.w600,
                         color: Colors.white),
                   ),
+                  SizedBox(height: 10.h,),
                   Text(
                     AppStrings.loginHint,
                     style: GoogleFonts.poppins(
@@ -159,7 +159,7 @@ class LoginScreen extends StatelessWidget {
                             style: GoogleFonts.poppins(
                                 fontWeight: FontWeight.w500,
                                 fontSize: 18.sp,
-                                color: Colors.white)),
+                                color: AppColors.lemon)),
                       )
                     ],
                   )

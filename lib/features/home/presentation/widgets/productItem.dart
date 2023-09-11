@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../../core/utils/app_colors.dart';
 import '../../domain/entities/ProductEntity.dart';
 import '../manager/cubit.dart';
 
@@ -22,7 +23,7 @@ class ProductItem extends StatelessWidget {
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15.r),
             border: Border.all(
-                color: const Color(0xff004182).withOpacity(.3), width: 2.w)),
+                color: AppColors.primary.withOpacity(.3), width: 2.w)),
         child: Stack(
           children: [
             Column(
@@ -50,7 +51,7 @@ class ProductItem extends StatelessWidget {
                         style: GoogleFonts.poppins(
                             fontWeight: FontWeight.w400,
                             fontSize: 14.sp,
-                            color: const Color(0xff06004F)),
+                            color:AppColors.primary),
                       ),
                       Text(
                         model.description ?? "",
@@ -59,7 +60,7 @@ class ProductItem extends StatelessWidget {
                         style: GoogleFonts.poppins(
                             fontWeight: FontWeight.w400,
                             fontSize: 14.sp,
-                            color: const Color(0xff06004F)),
+                            color:AppColors.primary),
                       ),
                       SizedBox(
                         height: 8.h,
@@ -71,7 +72,7 @@ class ProductItem extends StatelessWidget {
                             style: GoogleFonts.poppins(
                                 fontWeight: FontWeight.w400,
                                 fontSize: 14.sp,
-                                color: const Color(0xff06004F)),
+                                color: AppColors.primary),
                           ),
                           SizedBox(
                             width: 16.w,
@@ -81,12 +82,12 @@ class ProductItem extends StatelessWidget {
                             style: GoogleFonts.poppins(
                                 decoration: TextDecoration.lineThrough,
                                 decorationColor:
-                                const Color(0xff004182).withOpacity(.6)
+                                AppColors.primary.withOpacity(.6)
                                 // Replace with your desired color
                                 ,
                                 fontWeight: FontWeight.w400,
                                 fontSize: 11.sp,
-                                color: const Color(0xff004182).withOpacity(.6)),
+                                color: AppColors.primary.withOpacity(.6)),
                           ),
                         ],
                       ),
@@ -99,13 +100,13 @@ class ProductItem extends StatelessWidget {
                             'Review (${model.ratingsAverage})',
                             style: GoogleFonts.poppins(
                                 fontWeight: FontWeight.w400,
-                                fontSize: 12.sp,
-                                color: const Color(0xff06004F)),
+                                fontSize: 14.sp,
+                                color: AppColors.primary),
                           ),
                           Icon(
                             Icons.star,
-                            color: const Color(0xffFDD835),
-                            size: 15.h,
+                            color: AppColors.lemon,
+                            size: 18.h,
                           )
                         ],
                       )
@@ -127,10 +128,8 @@ class ProductItem extends StatelessWidget {
                     radius: 15.r,
                     backgroundColor: Colors.white,
                     child: Center(
-                      child: Icon(Icons.favorite_border),
-                      // child: fav
-                      //     ? Image.asset('assets/images/Vectorhart_full.png')
-                      //     : Image.asset('assets/images/heart.png'),
+                      child: Icon(Icons.favorite_border, color: AppColors.orange,),
+
                     ),
                   ),
                 ),
@@ -146,7 +145,7 @@ class ProductItem extends StatelessWidget {
                   },
                   child: CircleAvatar(
                     radius: 15.r,
-                    backgroundColor: const Color(0xff004182),
+                    backgroundColor: AppColors.primary,
                     child: const Center(
                       child: Icon(
                         Icons.add,

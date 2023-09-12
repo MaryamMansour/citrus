@@ -9,15 +9,19 @@ Users can perform various actions such as login, signup, signout, search, browse
 -Persistent login using SharedPreferences.  
 -Browse and search for products by categories or brands.    
 -Add products to the cart.  
--Update or delete items in the cart.  
--Add products to the favorite list.  
+-Update or delete items in the cart.   
 -API handling with Dio package using the following API Documentation.  
 -Utilize the BLoC and Cubit state management patterns with the bloc and flutter_bloc packages.  
 -Use Dartz for functional programming.  
 -Enhance typography with Google Fonts.  
 -Adapt to different screen sizes and orientations with flutter_screenutil.  
 -Display image slideshows with flutter_image_slideshow.  
--Check internet connectivity with internet_connection_checker.  
+-Check internet connectivity with internet_connection_checker. 
+
+
+## in progress Features 
+- Payment methods
+-  Add products to the favorite list. 
 
 ##  Resources
 
@@ -35,25 +39,25 @@ Users can perform various actions such as login, signup, signout, search, browse
 <summary>Click to expand</summary>
 
 
-### Login Screen $~~~~~~~~~~~$  $~~~~~~~~~~~$ signup Screen
+### Login Screen & signup Screen
 
-<img src="screens/login.jpg"  width="210" height="450">$~~~~~~~~~~~$<img src="screens/signup.jpg"  width="210" height="450">
 
-### Home Screen
+<img src="screens/login.jpg"  width="210" height="450"> <img src="screens/signup.jpg"  width="210" height="450">
+
+### Home Screen &  products Screen
 <img src="screens/home.jpg"  width="210" height="450">
-
-### products Screen
 <img src="screens/prod1.jpg"  width="210" height="450">
 <img src="screens/prod2.jpg"  width="210" height="450">
 
-### Product Details Screen
+
+
+
+### Product Details Screen & cart Screen & profile Screen
  <img src="screens/details.jpg"  width="210" height="450">
+ <img src="screens/cart.jpg"  width="210" height="450">
+ <img src="screens/profile.jpg"  width="210" height="450">
 
-### cart Screen
-<img src="screens/cart.jpg"  width="210" height="450">
 
-### profile Screen
-<img src="screens/profile.jpg"  width="210" height="450">
 
 
 

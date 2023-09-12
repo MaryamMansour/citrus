@@ -34,11 +34,10 @@ Users can perform various actions such as login, signup, signout, search, browse
 <details>
 <summary>Click to expand</summary>
 
-### signup Screen
-<img src="screens/signup.jpg"  width="210" height="450">
 
-### Login Screen
-<img src="screens/login.jpg"  width="210" height="450">
+### Login Screen $~~~~~~~~~~~$  $~~~~~~~~~~~$ signup Screen
+
+<img src="screens/login.jpg"  width="210" height="450">$~~~~~~~~~~~$<img src="screens/signup.jpg"  width="210" height="450">
 
 ### Home Screen
 <img src="screens/home.jpg"  width="210" height="450">
